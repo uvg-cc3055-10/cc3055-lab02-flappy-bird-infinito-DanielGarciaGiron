@@ -15,9 +15,9 @@ public class ScrollingBackground : MonoBehaviour {
         if (GameController.instance.gameOver==false)
         {
             transform.Translate(Vector3.left * scrollingSpeed * Time.deltaTime);
-            if (transform.position.x < -20.4f)
+            if (transform.position.x < -20f)
             {
-                transform.position = new Vector3(20.4f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(20f, transform.position.y, transform.position.z);
             }
         }
     }
