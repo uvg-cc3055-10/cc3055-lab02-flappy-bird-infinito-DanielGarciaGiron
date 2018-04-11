@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Column : MonoBehaviour {
+public class Coin : MonoBehaviour {
 
     private float scrollingSpeed = 2f;
 
-    void Start () {
-		
-	}
-	
-	void Update () {
-        if(GameController.instance.gameOver == false)
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        if (GameController.instance.gameOver == false)
         {
             transform.Translate(Vector3.left * scrollingSpeed * Time.deltaTime);
             if (transform.position.x < -10)
@@ -20,5 +22,10 @@ public class Column : MonoBehaviour {
             }
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
     }
 }
